@@ -40,10 +40,9 @@ services:
     volumes:
       - /data/postgres:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=chatwoot
-      - POSTGRES_USER=postgres
-      # Please provide your own password.
-      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=aaaa_jt42
+      - POSTGRES_USER=hhhh
+      - POSTGRES_PASSWORD=jENdShFNbB6A4dkyGxdEwQBAmAJIT0YM
 
   redis:
     image: redis:alpine
