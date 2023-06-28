@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV.fetch('POSTGRES_HOST', 'dpg-cidtvid9aq0ce38g3v40-a') %>
+  host: <%= ENV.fetch('POSTGRES_HOST', 'dpg-ciduj8t9aq0ce38jnm0g-a') %>
   port: <%= ENV.fetch('POSTGRES_PORT', '5432') %>
    # ref: https://github.com/mperham/sidekiq/issues/2985#issuecomment-531097962
   pool: <%= Sidekiq.server? ? ENV.fetch('SIDEKIQ_CONCURRENCY', 10) : ENV.fetch('RAILS_MAX_THREADS', 5) %>
@@ -11,18 +11,18 @@ default: &default
 
 development:
   <<: *default
-  database: "<%= ENV.fetch('POSTGRES_DATABASE', 'postgres_onehash') %>"
-  username: "<%= ENV.fetch('POSTGRES_USERNAME', 'postgres_onehash_user') %>"
-  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'pZQGQQhq1ncNFMZgt3yTazEXcehQy0VF') %>"
+  database: "<%= ENV.fetch('POSTGRES_DATABASE', 'aaaa_jt42') %>"
+  username: "<%= ENV.fetch('POSTGRES_USERNAME', 'hhhh') %>"
+  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'jENdShFNbB6A4dkyGxdEwQBAmAJIT0YM') %>"
 
 test:
   <<: *default
-  database: "<%= ENV.fetch('POSTGRES_DATABASE', 'postgres_onehash') %>"
-  username: "<%= ENV.fetch('POSTGRES_USERNAME', 'postgres_onehash_user') %>"
-  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'pZQGQQhq1ncNFMZgt3yTazEXcehQy0VF') %>"
+  database: "<%= ENV.fetch('POSTGRES_DATABASE', 'aaaa_jt42') %>"
+  username: "<%= ENV.fetch('POSTGRES_USERNAME', 'hhhh') %>"
+  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'jENdShFNbB6A4dkyGxdEwQBAmAJIT0YM') %>"
 
 production:
   <<: *default
-  database: "<%= ENV.fetch('POSTGRES_DATABASE', 'postgres_onehash') %>"
-  username: "<%= ENV.fetch('POSTGRES_USERNAME', 'postgres_onehash_user') %>"
-  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'pZQGQQhq1ncNFMZgt3yTazEXcehQy0VF') %>"
+  database: "<%= ENV.fetch('POSTGRES_DATABASE', 'aaaa_jt42') %>"
+  username: "<%= ENV.fetch('POSTGRES_USERNAME', 'hhhh') %>"
+  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'jENdShFNbB6A4dkyGxdEwQBAmAJIT0YM') %>"
