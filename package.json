@@ -144,6 +144,13 @@
     "vue-jest": "4",
     "webpack-dev-server": "^3"
   },
+  "browsers": {
+    "ie": "11",
+    "edge": ">=16",
+    "firefox": ">=60",
+    "chrome": ">=61",
+    "safari": ">=11.1"
+  },
   "engines": {
     "node": ">=10.x",
     "npm": ">=6.x",
