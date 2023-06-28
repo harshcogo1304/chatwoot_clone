@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Redis::Config do
   context 'when single redis instance is used' do
-    let(:redis_url) { 'redis://my-redis-instance:6379' }
+    let(:redis_url) { 'redis://red-cidtn798g3n4p2prpt5g:6379' }
     let(:redis_pasword) { 'some-strong-password' }
 
     before do
@@ -21,7 +21,7 @@ describe Redis::Config do
   end
 
   context 'when redis sentinel is used' do
-    let(:redis_url) { 'redis://my-redis-instance:6379' }
+    let(:redis_url) { 'redis://red-cidtn798g3n4p2prpt5g:6379' }
     let(:redis_sentinels) { 'sentinel_1:1234, sentinel_2:4321, sentinel_3' }
     let(:redis_master_name) { 'master-name' }
     let(:redis_pasword) { 'some-strong-password' }
