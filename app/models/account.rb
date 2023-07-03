@@ -82,8 +82,8 @@ class Account < ApplicationRecord
   enum locale: LANGUAGES_CONFIG.map { |key, val| [val[:iso_639_1_code], key] }.to_h
   enum status: { active: 0, suspended: 1 }
 
-  before_validation :validate_limit_keys
-  after_create_commit :notify_creation
+  # before_validation :validate_limit_keys
+  # after_create_commit :notify_creation
   after_create :create_tenant
 
   after_destroy :remove_account_sequences

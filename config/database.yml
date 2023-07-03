@@ -26,3 +26,9 @@ production:
   database: "<%= ENV.fetch('POSTGRES_DATABASE', 'aaaa_jt42') %>"
   username: "<%= ENV.fetch('POSTGRES_USERNAME', 'hhhh') %>"
   password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'jENdShFNbB6A4dkyGxdEwQBAmAJIT0YM') %>"
+
+<% subdomains.each do |subdomain| %>
+<%= subdomain %>:
+<<: *default
+database: <%= subdomain %>_development
+<% end %>
