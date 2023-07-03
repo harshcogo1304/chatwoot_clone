@@ -84,7 +84,14 @@ class Account < ApplicationRecord
 
   before_validation :validate_limit_keys
   after_create_commit :notify_creation
+  after_create :create_tenant
+
   after_destroy :remove_account_sequences
+
+  def create_tenant
+    Apartment::Tenant.create(subdomain)
+    Apartment::Tenant.switch!(subdomain)
+  end
 
   def agents
     users.where(account_users: { role: :agent })

@@ -15,6 +15,8 @@ Dotenv::Railtie.load
 require 'ddtrace' if ENV.fetch('DD_TRACE_AGENT_URL', false).present?
 require 'elastic-apm' if ENV.fetch('ELASTIC_APM_SECRET_TOKEN', false).present?
 require 'scout_apm' if ENV.fetch('SCOUT_KEY', false).present?
+require 'apartment/elevators/subdomain'
+# require 'apartment/elevators/subdomain'
 
 if ENV.fetch('NEW_RELIC_LICENSE_KEY', false).present?
   require 'newrelic-sidekiq-metrics'
@@ -45,6 +47,8 @@ module Chatwoot
     config.generators.javascripts = false
     config.generators.stylesheets = false
 
+    # config.middleware.use Apartment::Elevators::Subdomain
+
     # Custom chatwoot configurations
     config.x = config_for(:app).with_indifferent_access
 
@@ -52,6 +56,8 @@ module Chatwoot
     # https://discuss.rubyonrails.org/t/cve-2022-32224-possible-rce-escalation-bug-with-serialized-columns-in-active-record/81017
     # FIX ME : fixes breakage of installation config. we need to migrate.
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess]
+
+    config.middleware.use Apartment::Elevators::Subdomain
   end
 
   def self.config
