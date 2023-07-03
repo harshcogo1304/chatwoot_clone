@@ -3,8 +3,8 @@ class Platform::Api::V1::AccountsController < PlatformController
 
   def create
     @resource = Account.create!(account_params)
-    update_resource_features
-    @platform_app.platform_app_permissibles.find_or_create_by(permissible: @resource)
+    # update_resource_features
+    # @platform_app.platform_app_permissibles.find_or_create_by(permissible: @resource)
   end
 
   def update
@@ -37,6 +37,6 @@ class Platform::Api::V1::AccountsController < PlatformController
   end
 
   def permitted_params
-    params.permit(:name, :locale, :domain, :support_email, :status, features: {}, limits: {}, custom_attributes: {})
+    params.permit(:name, :locale, :domain, :subdomain, :support_email, :status, features: {}, limits: {}, custom_attributes: {})
   end
 end
